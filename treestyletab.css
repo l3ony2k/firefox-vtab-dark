@@ -1,0 +1,198 @@
+tab-item {
+	--tab-surface: hsla(0,0%,50%,0.22);
+}
+
+tab-item {
+	border: none;
+	outline: 1px solid hsla(0, 0%, 0%, 0.3);
+    outline-offset: -1px;
+	--tab-size: 36px !important;
+	height: var(--tab-size);
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 9px;
+	padding: 0 0 0 12px !important;
+	margin: 0;
+}
+
+tab-item.unread {
+	opacity: .8;
+}
+
+tab-item.pinned {
+	padding: unset !important;
+}
+
+.tabs::after {
+	content: '';
+	position: fixed;
+	inset: 0;
+	display: block;
+	z-index: 999999999999999999;
+	pointer-events: none;
+
+	box-shadow: 
+		inset 0 24px 38px  3px rgba(0,0,0,0.14),
+		inset 0  9px 46px  8px rgba(0,0,0,0.12),
+		inset 0 11px 15px -7px rgba(0,0,0,0.20),
+		inset 0  2px  2px  0   rgba(0,0,0,0.14),
+		inset 0  3px  1px -2px rgba(0,0,0,0.12),
+		inset 0  1px  5px  0   rgba(0,0,0,0.20) !important;
+}
+
+tab-item.active:not(.pinned) {
+	padding-right: 10px !important;
+	margin-right: 1px !important;
+}
+tab-item.active {
+	z-index: 100;
+	box-shadow: 
+		0 24px 38px  3px rgba(0,0,0,0.14),
+		0  9px 46px  8px rgba(0,0,0,0.12),
+		0 11px 15px -7px rgba(0,0,0,0.20),
+		0  2px  2px  0   rgba(0,0,0,0.14),
+		0  3px  1px -2px rgba(0,0,0,0.12),
+		0  1px  5px  0   rgba(0,0,0,0.20) !important;
+}
+
+tab-item.active::after {
+	width: 0px;/*10*/
+	background: currentcolor;
+	opacity: .5;
+	content: '';
+	position: absolute;
+	inset: 0;
+	left: unset;
+}
+
+tab-item.active.pinned::after {
+	width: 0%;/*50%*/
+}
+
+tab-item.active > :nth-child(8),
+tab-item > :nth-child(8)::before,
+tab-item > :nth-child(8)::after {
+	display: none !important;
+}
+tab-item > tab-favicon {
+	order: 1;
+}
+tab-item > tab-label {
+	order: 2;
+}
+tab-item > tab-sound-button {
+	grid-area: sound;
+	order: 3;
+}
+tab-item > tab-counter {
+	order: 4;
+}
+tab-item > tab-twisty {
+	order: 99 !important;
+	position: unset;
+	display: block;
+}
+tab-item:not([data-child-ids]) tab-twisty,
+tab-item.pinned tab-twisty,
+tab-item.collapsed tab-twisty {
+	display: none !important;
+}
+tab-item > * {
+	margin: 0 !important;
+	padding-inline: 0 !important;
+}
+
+.newtab-button::before {
+	height: 12px;
+	width: 12px;
+	margin: 12px;
+}
+
+#tabbar {
+	bottom: 36px !important;
+}
+
+tab-item::before {
+	/*content: var(--overlay-content);*/
+	/*background: var(--overlay-color);*/
+    content: var(--theme-colors-button_background_active);
+    background: var(--theme-colors-button_background_active);
+	position: absolute;
+	inset: 0;
+}
+
+/*
+tab-item[data-current-uri^="https://github.com"],
+tab-item[data-current-uri^="https://gist.github.com"] {
+	--overlay-content: '';
+	--overlay-color: hsla(195, 100%, 70%, .15);
+}
+tab-item[data-current-uri^="https://api.flutter.dev"],
+tab-item[data-current-uri^="https://pub.dev/documentation"],
+tab-item[data-current-uri^="https://flutter.dev/docs"] {
+	--overlay-content: '';
+	--overlay-color: hsla(225, 60%, 50%, .15);
+}
+tab-item[data-current-uri^="https://stackoverflow.com"] {
+	--overlay-content: '';
+	--overlay-color: hsla(25, 100%, 25%, .15);
+}
+tab-item[data-current-uri^="about:"] {
+	--overlay-content: '';
+	--overlay-color: hsla(0, 0%, 0%, .35);
+}
+tab-item[data-current-uri^="https://www.google.com"],
+tab-item[data-current-uri^="https://google.com"] {
+	--overlay-content: '';
+	--overlay-color: hsla(350, 100%, 22%, .15);
+}*/
+
+tab-item.active {
+  height: 36px !important;
+  background-color: #41000D;
+}
+tab-item.active .label-content {
+  font-weight: bold;
+  font-size: 12px;
+}
+tab-item.active tab-twisty,
+tab-item.active .label-content,
+tab-item.active tab-counter {
+  color: #fff;
+}
+
+tab-item.unread .label-content {
+  font-style: italic;
+}
+
+tab-item tab-closebox {
+  display: none;
+}
+
+:root.left #tabbar {
+  direction: ltr;
+  overflow-x: hidden;
+}
+
+.newtab-button-box {
+  display: none;
+}
+#tabbar {
+  bottom: 0 !important; /* Eliminate dead space on bottom */
+}
+
+:root.sidebar #background {
+  background: url("chrome://global/skin/media/imagedoc-lightnoise.png");
+}
+
+/* Change styling of pending (unloaded) tabs */
+tab-item.discarded {
+  opacity: 0.75;
+}
+
+/*tab-item.discarded .label-content {
+  color: red;
+}*/
