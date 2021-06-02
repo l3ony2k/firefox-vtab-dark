@@ -4,7 +4,7 @@ tab-item {
 
 tab-item {
 	border: none;
-	outline: 1px solid hsla(0, 0%, 0%, 0.3);
+	outline: .5px solid hsla(0, 0%, 0%, 0.3);
     outline-offset: -1px;
 	--tab-size: 36px !important;
 	height: var(--tab-size);
@@ -19,7 +19,8 @@ tab-item {
 }
 
 tab-item.unread {
-	opacity: .8;
+	opacity: 0.9;
+    background-color: hsla(0,53%,57%,0.22);
 }
 
 tab-item.pinned {
@@ -105,11 +106,11 @@ tab-item > * {
 	padding-inline: 0 !important;
 }
 
-.newtab-button::before {
+/*.newtab-button::before {
 	height: 12px;
 	width: 12px;
 	margin: 12px;
-}
+}*/
 
 #tabbar {
 	bottom: 36px !important;
@@ -151,8 +152,8 @@ tab-item[data-current-uri^="https://google.com"] {
 }*/
 
 tab-item.active {
-  height: 36px !important;
-  background-color: #41000D;
+  height: var(--tab-size) !important;
+  background-color: #400000;
 }
 tab-item.active .label-content {
   font-weight: bold;
@@ -161,7 +162,7 @@ tab-item.active .label-content {
 tab-item.active tab-twisty,
 tab-item.active .label-content,
 tab-item.active tab-counter {
-  color: #fff;
+  color: #FFFFFF;
 }
 
 tab-item.unread .label-content {
@@ -180,6 +181,7 @@ tab-item tab-closebox {
 .newtab-button-box {
   display: none;
 }
+
 #tabbar {
   bottom: 0 !important; /* Eliminate dead space on bottom */
 }
