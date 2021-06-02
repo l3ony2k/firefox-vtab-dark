@@ -23,6 +23,21 @@
 	--focus-outline-color: #EC5555 !important;
 }
 
+/* hide star btn & identity box */
+#star-button-box {
+	display: none;
+}
+#identity-box {
+	display: none;
+}
+.urlbar-input-box {
+	margin-left: 5px;
+}
+
+
+/* personal preferences end */
+
+
 /*
 			TREE STYLE TABS - START
 */
