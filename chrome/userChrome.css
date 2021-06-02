@@ -1,4 +1,27 @@
+/* personal preferences */
+
 .browserContainer { background-color: #161616 !important; }
+
+#nav-bar-customization-target > :is(toolbarbutton, toolbaritem):first-child, #nav-bar-customization-target > toolbarpaletteitem:first-child > :is(toolbarbutton, toolbaritem) {
+	padding-inline-start: 0px !important;
+}
+
+#urlbar-input-container {
+	border: 1px solid #202020 !important;
+	padding: 1px 2px 1px 2px !important;
+  background: #1a1a1a !important;
+}
+
+#identity-box[pageproxystate="valid"].notSecureText > .identity-box-button, #identity-box[pageproxystate="valid"].chromeUI > .identity-box-button, #identity-box[pageproxystate="valid"].extensionPage > .identity-box-button, #urlbar-label-box {
+	background-color: transparent !important;
+}
+
+:root[lwt-toolbar-field-focus-brighttext] {
+	--lwt-popup-brighttext-url-color: #EC5555 !important;
+}
+:root:-moz-lwtheme-brighttext {
+	--focus-outline-color: #EC5555 !important;
+}
 
 /*
 			TREE STYLE TABS - START
@@ -141,9 +164,9 @@ scrollbar {
 	border: none !important;
 	box-shadow: none !important;
 }
-#back-button > .toolbarbutton-icon {
+/*#back-button > .toolbarbutton-icon {
 	list-style-image: url("img/back.svg") !important;
-}
+}*/
 :root:not([uidensity="compact"]) #nav-bar #back-button > .toolbarbutton-icon {
 	--backbutton-background: transparent;
 	background-origin: unset !important;
@@ -153,24 +176,6 @@ scrollbar {
 	width: calc(2 * var(--toolbarbutton-inner-padding) + 16px) !important;
 	padding: var(--toolbarbutton-inner-padding) !important;
 	border-radius: var(--toolbarbutton-border-radius) !important;
-}
-#forward-button > .toolbarbutton-icon {
-	list-style-image: url("img/forward.svg") !important;
-}
-#reload-button > .toolbarbutton-icon {
-	list-style-image: url("img/reload.svg") !important;
-}
-#history-panelmenu {
-	list-style-image: url("img/history.svg") !important;
-}
-#bookmarks-menu-button > .toolbarbutton-icon {
-	list-style-image: url("img/bookmarks.svg") !important;
-}
-#nav-bar-overflow-button > .toolbarbutton-icon {
-	list-style-image: url("img/overflow.svg") !important;
-}
-#PanelUI-menu-button > .toolbarbutton-icon {
-	list-style-image: url("img/menu.svg") !important;
 }
 
 #urlbar,
