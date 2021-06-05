@@ -2,6 +2,10 @@
 
 .browserContainer { background-color: #161616 !important; }
 
+#navigator-toolbox {
+	border-bottom: .5px solid #121212 !important;
+}
+
 #nav-bar-customization-target > :is(toolbarbutton, toolbaritem):first-child, #nav-bar-customization-target > toolbarpaletteitem:first-child > :is(toolbarbutton, toolbaritem) {
 	padding-inline-start: 0px !important;
 }
@@ -44,7 +48,7 @@
 
 /* Reduce minimum width of the sidebar */
 #sidebar {
-  min-width: 50px !important;
+  min-width: 88px !important;
 }
 
 /* Hide sidebar header when using Tree Style Tab. */
