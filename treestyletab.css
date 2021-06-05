@@ -1,5 +1,5 @@
 tab-item {
-	--tab-surface: hsla(0,0%,50%,0.22);
+	--tab-surface: hsla(0,0%,100%,0.16);
 }
 
 tab-item {
@@ -8,7 +8,6 @@ tab-item {
     outline-offset: -1px;*/
 	--tab-size: 36px !important;
 	height: var(--tab-size);
-
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -97,7 +96,7 @@ tab-item > tab-counter {
 	order: 4;
 }
 tab-item > tab-twisty {
-	order: 0 !important;
+	order: 5 !important;
 }
 
 /* move close box to the left */
@@ -160,11 +159,9 @@ tab-item.unread .label-content {
   display: none;
 }/***********************************************************************************************************************/
 /* dang hide twisty anyway */
-#tabbar tab-item:hover tab-twisty {
+/*#tabbar tab-item:hover tab-twisty {
   display: none;
-}
-
-
+}*/
 
 /* closebox only show on hover */
 /* "#tabbar" is required for TST 3.4.0 and later! */
@@ -173,13 +170,13 @@ tab-item.unread .label-content {
 }
 
 /* add right margin to tab counter 6px*/
-/*tab-counter::after {
-  margin-right: 0px;
-}*/
+tab-counter::after {
+  margin-right: 6px;
+}
 
 /* change tab counter color */
 tab-counter {
-  color: #888
+  color: #999
 }
 
 /* hide tab counter on hover */
@@ -193,9 +190,9 @@ tab-sound-button::after {
 }
 
 /* hide sound button on hover */
-#tabbar tab-item:hover tab-sound-button {
+/*#tabbar tab-item:hover tab-sound-button {
   display: none;
-}
+}*/
 
 :root.left #tabbar {
   direction: ltr;
