@@ -3,9 +3,9 @@ tab-item {
 }
 
 tab-item {
-	border: none;
-	outline: .5px solid hsla(0, 0%, 0%, 0.3);
-    outline-offset: -1px;
+	border: .5px solid hsla(0, 0%, 0%, 0.22);
+	/*outline: .5px solid hsla(0, 0%, 0%, 0.22);
+    outline-offset: -1px;*/
 	--tab-size: 36px !important;
 	height: var(--tab-size);
 
@@ -13,10 +13,16 @@ tab-item {
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	gap: 9px;
-	padding: 0 0 0 12px !important;
+	gap: 8px;
+	padding: 0 0 0 10px !important;
 	margin: 0;
 }
+
+/* add right margin to close box to align text tag */
+/*tab-closebox::after {
+  margin-right: 1px;
+  width: 1.25em;
+}*/
 
 tab-item.unread {
 	opacity: 0.9;
@@ -44,10 +50,6 @@ tab-item.pinned {
 		inset 0  1px  5px  0   rgba(0,0,0,0.20) !important;
 }
 
-tab-item.active:not(.pinned) {
-	padding-right: 10px !important;
-	margin-right: 1px !important;
-}
 tab-item.active {
 	z-index: 100;
 	box-shadow: 
@@ -57,16 +59,6 @@ tab-item.active {
 		0  2px  2px  0   rgba(0,0,0,0.14),
 		0  3px  1px -2px rgba(0,0,0,0.12),
 		0  1px  5px  0   rgba(0,0,0,0.20) !important;
-}
-
-tab-item.active::after {
-	width: 0px;/*10*/
-	background: currentcolor;
-	opacity: .5;
-	content: '';
-	position: absolute;
-	inset: 0;
-	left: unset;
 }
 
 tab-item.active.pinned::after {
@@ -84,6 +76,9 @@ tab-item > tab-favicon {
 tab-item > tab-label {
 	order: 2;
 }
+/********************************************************************/
+tab-label{line-height:36px;}
+/********************************************************************/
 tab-item > tab-sound-button {
 	grid-area: sound;
 	order: 3;
@@ -92,10 +87,18 @@ tab-item > tab-counter {
 	order: 4;
 }
 tab-item > tab-twisty {
-	order: 99 !important;
-	position: unset;
-	display: block;
+	order: 0 !important;
 }
+
+/* move close box to the left */
+:root.left tab-item tab-twisty {
+  order: 10000;
+}
+:root.left tab-item tab-closebox {
+  order: -1;
+}
+
+/*********************************************************/
 tab-item:not([data-child-ids]) tab-twisty,
 tab-item.pinned tab-twisty,
 tab-item.collapsed tab-twisty {
@@ -104,52 +107,19 @@ tab-item.collapsed tab-twisty {
 tab-item > * {
 	margin: 0 !important;
 	padding-inline: 0 !important;
+    padding: 0 !important;
 }
-
-/*.newtab-button::before {
-	height: 12px;
-	width: 12px;
-	margin: 12px;
-}*/
 
 #tabbar {
 	bottom: 36px !important;
 }
 
 tab-item::before {
-	/*content: var(--overlay-content);*/
-	/*background: var(--overlay-color);*/
     content: var(--theme-colors-button_background_active);
     background: var(--theme-colors-button_background_active);
 	position: absolute;
 	inset: 0;
 }
-
-/*
-tab-item[data-current-uri^="https://github.com"],
-tab-item[data-current-uri^="https://gist.github.com"] {
-	--overlay-content: '';
-	--overlay-color: hsla(195, 100%, 70%, .15);
-}
-tab-item[data-current-uri^="https://api.flutter.dev"],
-tab-item[data-current-uri^="https://pub.dev/documentation"],
-tab-item[data-current-uri^="https://flutter.dev/docs"] {
-	--overlay-content: '';
-	--overlay-color: hsla(225, 60%, 50%, .15);
-}
-tab-item[data-current-uri^="https://stackoverflow.com"] {
-	--overlay-content: '';
-	--overlay-color: hsla(25, 100%, 25%, .15);
-}
-tab-item[data-current-uri^="about:"] {
-	--overlay-content: '';
-	--overlay-color: hsla(0, 0%, 0%, .35);
-}
-tab-item[data-current-uri^="https://www.google.com"],
-tab-item[data-current-uri^="https://google.com"] {
-	--overlay-content: '';
-	--overlay-color: hsla(350, 100%, 22%, .15);
-}*/
 
 tab-item.active {
   height: var(--tab-size) !important;
@@ -159,6 +129,7 @@ tab-item.active .label-content {
   font-weight: bold;
   font-size: 12px;
 }
+
 tab-item.active tab-twisty,
 tab-item.active .label-content,
 tab-item.active tab-counter {
@@ -169,7 +140,50 @@ tab-item.unread .label-content {
   font-style: italic;
 }
 
-tab-item tab-closebox {
+
+/* twisty only show on hover */
+#tabbar tab-item:not(:hover) tab-twisty {
+  display: none;
+}
+/* hide favicon when hover */
+#tabbar tab-item:hover tab-favicon {
+  display: none;
+}/***********************************************************************************************************************/
+/* dang hide twisty anyway */
+#tabbar tab-item:hover tab-twisty {
+  display: none;
+}
+
+
+
+/* closebox only show on hover */
+/* "#tabbar" is required for TST 3.4.0 and later! */
+#tabbar tab-item:not(:hover) tab-closebox {
+  display: none;
+}
+
+/* add right margin to tab counter 6px*/
+/*tab-counter::after {
+  margin-right: 0px;
+}*/
+
+/* change tab counter color */
+tab-counter {
+  color: #888
+}
+
+/* hide tab counter on hover */
+#tabbar tab-item:hover tab-counter {
+  display:none;
+}
+
+/* add right margin to sound button */
+tab-sound-button::after {
+  margin-right: 6px;
+}
+
+/* hide sound button on hover */
+#tabbar tab-item:hover tab-sound-button {
   display: none;
 }
 
@@ -178,7 +192,11 @@ tab-item tab-closebox {
   overflow-x: hidden;
 }
 
-.newtab-button-box {
+/* fix new tab btn after last tab */
+#tabbar.overflow .after-tabs {
+  display: block;
+}
+#tabbar.overflow ~ .after-tabs {
   display: none;
 }
 
@@ -198,3 +216,7 @@ tab-item.discarded {
 /*tab-item.discarded .label-content {
   color: red;
 }*/
+
+.newtab-button {
+  display: none;
+}
