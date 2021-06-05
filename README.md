@@ -28,6 +28,9 @@ Best w/ [Matte Black (Red)](https://addons.mozilla.org/en-US/firefox/addon/matte
 
 1. Vertical tabs
 2. 0 saturation & red accent color
+3. TST
+    - disabled twisty
+    - moved close box to the favicon area when hover
 
 ## TreeStyleTab
 
