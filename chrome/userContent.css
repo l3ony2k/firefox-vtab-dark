@@ -18,6 +18,15 @@
 }
 
 
+/* change tst white splash loading */
+@-moz-document regexp("moz-extension://.+/sidebar/sidebar.html.*") {
+	:root,
+	#background {
+	  background-color: #222;
+	  background: url("chrome://global/skin/media/imagedoc-lightnoise.png");
+	  /* https://github.com/piroor/treestyletab/blob/0eede581d763f92344fe64b1c042839f3b8ca955/webextensions/resources/ui-color.css#L198 */
+	}
+  }
 
 
 
@@ -76,23 +85,64 @@ scrollbar {
 	}
 }
 
+
+/*reader*/
 @-moz-document url-prefix('about:reader') {
 	* {
 		box-sizing: border-box;
-		word-spacing: .25em;
+		word-spacing: .1em;
 	}
 	body.sans-serif {
-		font-family: 'Open Sans', 'Noto Sans', Arial, sans-serif !important;
+		font-family: '微软雅黑', 'Open Sans', 'Noto Sans', Arial, sans-serif !important;
 		line-height: 1.5em;
 	}
 	body.serif {
-		font-family: serif, 'Book Antiqua' !important;
+		font-family: '思源宋体 CN',serif, 'Book Antiqua' !important;
 	}
 	body.sans-serif, body.serif {
 		padding-bottom: 75vh !important;
 	}
 	body.sans-serif p, body.serif p {
 		text-indent: 20px !important;
+	}
+	.toolbar {
+		padding-block: 16px !important;
+		border: 1px solid var(--toolbar-border) !important;
+		border-radius: 6px !important;
+		box-shadow: 0 2px 8px var(--toolbar-box-shadow) !important;
+		width: 32px !important;
+		--inline-padding: min(16px, calc(25% - 0.25 * 34px)) !important;
+		padding-inline: 0 !important;
+		margin-inline-start: max(calc(50% - 17px - var(--inline-padding)), calc(100% - 96px - 34px - 2 * var(--inline-padding))) !important;
+		font-family: Helvetica, Arial, sans-serif !important;
+		/* list-style: none; */
+		/* user-select: none; */
+	}
+	body.dark {
+		--main-background: #1b1b1b !important;
+		--main-foreground: #fafafa !important;
+		--toolbar-border: #2e2e2e !important;
+		--toolbar-box-shadow: #131313 !important;
+		--toolbar-button-hover: var(--grey-90-a30) !important;
+		--toolbar-button-active: var(--grey-90-a80) !important;
+		--popup-button-active: hsla(0,0%,70%,.6) !important;
+		--popup-bgcolor: #4c4a50 !important;
+		--popup-button: #5c5c61 !important;
+		--popup-line: #5c5c61 !important;
+		--selected-background: #9A3E3E !important;
+		--link-foreground: #d27a7a !important;
+		--visited-link-foreground: #e675fd !important;
+		--link-selected-foreground: #fff !important;
+		--opaque-popup-border: #434146 !important;
+		--font-value-border: #656468 !important;
+		--font-color: #fff !important;
+		--icon-fill: #fff !important;
+		--icon-disabled-fill: #ffffff66 !important;
+		--tooltip-background: black !important;
+		--tooltip-foreground: white !important;
+	}
+	.container {
+		text-align: justify  !important;
 	}
 }
 .top-sites {
