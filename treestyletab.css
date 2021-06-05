@@ -65,6 +65,16 @@ tab-item.active.pinned::after {
 	width: 0%;/*50%*/
 }
 
+tab-item.active::after {
+	width: 0px;
+	background: currentcolor;
+	opacity: .5;
+	content: '';
+	position: absolute;
+	inset: 0;
+	left: unset;
+}
+
 tab-item.active > :nth-child(8),
 tab-item > :nth-child(8)::before,
 tab-item > :nth-child(8)::after {
