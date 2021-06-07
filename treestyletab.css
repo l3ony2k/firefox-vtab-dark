@@ -188,6 +188,10 @@ tab-counter {
 tab-sound-button::after {
   margin-right: 6px;
 }
+#tabbar tab-item:hover tab-sound-button::after {
+  margin-right:-10px !important;
+}
+
 
 /* hide sound button on hover */
 /*#tabbar tab-item:hover tab-sound-button {
