@@ -28,13 +28,11 @@ Best w/ [Matte Black (Red)](https://addons.mozilla.org/en-US/firefox/addon/matte
 
 1. Vertical tabs
 2. 0 saturation & red accent color
-3. TST
-    - disabled twisty
-    - moved close box to the favicon area when hover
+3. TST: moved close box to the favicon area when hover
 
 ## TreeStyleTab
 
-- Make sure you've enabled double click to close tab
+- ~~Make sure you've enabled double click to close tab~~ （don't have to do this now)
     - Press `Ctrl` - `F` to find `double-click`
       ![image](https://user-images.githubusercontent.com/58762081/120375881-db0ea400-c34d-11eb-9ac1-8769dc60d5f1.png)
 - Double click to close tabs
