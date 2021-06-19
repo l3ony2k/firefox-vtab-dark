@@ -1195,3 +1195,81 @@ scrollbar {
     list-style-image: url(chrome://global/skin/icons/settings.svg);
   }
 }
+
+/* download popup and app picker in dark mode */
+
+@-moz-document url("chrome://mozapps/content/downloads/unknownContentType.xhtml") {
+  #unknownContentType { 
+  color: white !important;
+  background-color: #2b2a33 !important; 
+}
+  
+button {
+
+  -moz-appearance: none !important;
+  
+  background-color: #42414D !important;
+  
+  color: white !important;
+  
+  border: 1px solid #52525E !important;
+  border-radius: 4px !important;
+  
+  }
+  
+  button:hover {
+  
+  background-color: #5f5e6e !important;
+  border: 1px solid dodgerblue !important;	
+  }
+  
+  #openHandler {
+    -moz-appearance: none !important;
+    background: #5f5e6e !important;
+    color: white !important;
+    
+  }
+
+  #openHandlerBox{
+    -moz-appearance: none !important;
+    background: #5f5e6e !important;
+    border: 1px solid black !important;
+    border-radius: 4px !important
+  }
+  
+}
+
+@-moz-document url("chrome://global/content/appPicker.xhtml") {
+
+#app-picker{
+  color: white !important;
+  background-color: #2b2a33 !important;
+}
+
+button {
+
+  -moz-appearance: none !important;
+  
+  background-color: #42414D !important;
+  
+  color: white !important;
+  
+  border: 1px solid #52525E !important;
+  border-radius: 4px !important;
+  
+  }
+  
+  button:hover {
+  
+  background-color: #5f5e6e !important;
+  border: 1px solid dodgerblue !important;	
+  }
+
+  #app-picker-listbox{
+    -moz-appearance: none !important;
+    background-color: #2b2a33 !important;
+    color: white !important;
+    border: 1px solid #52525E !important;
+  }
+
+}
