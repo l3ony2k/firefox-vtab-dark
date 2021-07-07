@@ -1,34 +1,40 @@
-tab-item {
-	--tab-surface: hsla(0,0%,100%,0.16);
+:root {
+	--face-highlight-lighter: rgb(122,46,46);
+	--face-highlight-more-lighter: #400000;
+	--face-highlight-more-more-lighter: rgb(72,44,44);
+	--face-gradient-start-active: rgba(43,43,43,0.4);
+	--face-gradient-start-inactive: rgba(44,44,44,0.2);
+	--face-gradient-end: rgba(44,44,44,0);
 }
 
 tab-item {
+	--tab-surface: hsla(0, 0%, 100%, .16);
+}
+
+tab-item > tab-item-substance {
 	border: .5px solid hsla(0, 0%, 0%, 0.22);
-	/*outline: .5px solid hsla(0, 0%, 0%, 0.22);
-    outline-offset: -1px;*/
+	outline: 1px solid hsla(0, 0%, 0%, 0.09);
 	--tab-size: 36px !important;
 	height: var(--tab-size);
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	gap: 8px;
-	padding: 0 0 0 10px !important;
+	gap: 6px;
+	padding: 0 0 0 8px !important;
 	margin: 0;
 }
 
-/* add right margin to close box to align text tag */
-/*tab-closebox::after {
-  margin-right: 1px;
-  width: 1.25em;
-}*/
-
-tab-item.unread {
-	opacity: 0.9;
-    background-color: hsla(0,53%,57%,0.22);
+tab-item.active .label-content {
+  font-weight: bold;
+  color: #fff;
 }
 
-tab-item.pinned {
+tab-item.unread {
+	opacity: .5;
+}
+
+tab-item.pinned > tab-item-substance {
 	padding: unset !important;
 }
 
@@ -49,6 +55,10 @@ tab-item.pinned {
 		inset 0  1px  5px  0   rgba(0,0,0,0.20) !important;
 }
 
+tab-item.active:not(.pinned) > tab-item-substance {
+	padding-right: 0px !important;
+	margin-right: 0px !important;
+}
 tab-item.active {
 	z-index: 100;
 	box-shadow: 
@@ -60,156 +70,50 @@ tab-item.active {
 		0  1px  5px  0   rgba(0,0,0,0.20) !important;
 }
 
-tab-item.active.pinned::after {
-	width: 0%;/*50%*/
+tab-item.active.pinned > tab-item-substance::after {
+	width: 50%;
 }
 
-tab-item.active::after {
-	width: 0px;
-	background: currentcolor;
-	opacity: .5;
-	content: '';
-	position: absolute;
-	inset: 0;
-	left: unset;
-}
-
-tab-item.active > :nth-child(8),
-tab-item > :nth-child(8)::before,
-tab-item > :nth-child(8)::after {
+tab-item.active > tab-item-substance > :nth-child(8),
+tab-item > tab-item-substance > :nth-child(8)::before,
+tab-item > tab-item-substance > :nth-child(8)::after {
 	display: none !important;
 }
-tab-item > tab-favicon {
+tab-item > tab-item-substance > tab-favicon {
 	order: 1;
 }
-tab-item > tab-label {
+tab-item > tab-item-substance > tab-label {
 	order: 2;
 }
-/********************************************************************/
-tab-label{line-height:36px;}
-/********************************************************************/
-tab-item > tab-sound-button {
+tab-item > tab-item-substance > tab-sound-button {
 	grid-area: sound;
 	order: 3;
 }
-tab-item > tab-counter {
+tab-item > tab-item-substance > tab-counter {
 	order: 4;
 }
-tab-item > tab-twisty {
-	order: 5 !important;
+tab-item > tab-item-substance > tab-twisty {
+	order: 99 !important;
+	position: unset;
+	display: block;
 }
-
-/* move close box to the left */
-:root.left tab-item tab-twisty {
-  order: 10000;
-}
-:root.left tab-item tab-closebox {
-  order: -1;
-}
-
-/*********************************************************/
 tab-item:not([data-child-ids]) tab-twisty,
 tab-item.pinned tab-twisty,
 tab-item.collapsed tab-twisty {
 	display: none !important;
 }
-tab-item > * {
+tab-item > tab-item-substance > * {
 	margin: 0 !important;
 	padding-inline: 0 !important;
-    padding: 0 !important;
 }
 
-#tabbar {
-	bottom: 36px !important;
-}
-
-tab-item::before {
-    content: var(--theme-colors-button_background_active);
-    background: var(--theme-colors-button_background_active);
+tab-item > tab-item-substance::before {
+	content: var(--overlay-content);
+	background: var(--overlay-color);
 	position: absolute;
 	inset: 0;
 }
 
-tab-item.active {
-  height: var(--tab-size) !important;
-  background-color: #400000;
-}
-tab-item.active .label-content {
-  font-weight: bold;
-  font-size: 12px;
-}
-
-tab-item.active tab-twisty,
-tab-item.active .label-content,
-tab-item.active tab-counter {
-  color: #FFFFFF;
-}
-
-tab-item.unread .label-content {
-  font-style: italic;
-}
-
-
-/* twisty only show on hover */
-#tabbar tab-item:not(:hover) tab-twisty {
-  display: none;
-}
-/* hide favicon when hover */
-#tabbar tab-item:hover tab-favicon {
-  display: none;
-}/***********************************************************************************************************************/
-/* dang hide twisty anyway */
-/*#tabbar tab-item:hover tab-twisty {
-  display: none;
-}*/
-
-/* closebox only show on hover */
-/* "#tabbar" is required for TST 3.4.0 and later! */
-#tabbar tab-item:not(:hover) tab-closebox {
-  display: none;
-}
-
-/* add right margin to tab counter 6px*/
-tab-counter::after {
-  margin-right: 6px;
-}
-
-/* change tab counter color */
-tab-counter {
-  color: #999
-}
-
-/* hide tab counter on hover */
-#tabbar tab-item:hover tab-counter {
-  display:none;
-}
-
-/* add right margin to sound button */
-tab-sound-button::after {
-  margin-right: 6px;
-}
-#tabbar tab-item:hover tab-sound-button::after {
-  margin-right:-10px !important;
-}
-
-
-/* hide sound button on hover */
-/*#tabbar tab-item:hover tab-sound-button {
-  display: none;
-}*/
-
-:root.left #tabbar {
-  direction: ltr;
-  overflow-x: hidden;
-}
-
-/* fix new tab btn after last tab */
-#tabbar.overflow .after-tabs {
-  display: block;
-}
-#tabbar.overflow ~ .after-tabs {
-  display: none;
-}
 
 #tabbar {
   bottom: 0 !important; /* Eliminate dead space on bottom */
@@ -219,15 +123,45 @@ tab-sound-button::after {
   background: url("chrome://global/skin/media/imagedoc-lightnoise.png");
 }
 
-/* Change styling of pending (unloaded) tabs */
-tab-item.discarded {
-  opacity: 0.75;
+.newtab-button {
+  display: none;
 }
 
-/*tab-item.discarded .label-content {
-  color: red;
-}*/
+tab-item.unread .label-content {
+  font-style: italic;
+}
 
-.newtab-button {
+/* twisty only show on hover */
+#tabbar tab-item:not(:hover) tab-twisty {
+  display: none;
+}
+
+/* add right margin to tab counter 6px*/
+tab-counter:not(:hover)::after {
+  margin-right: 5px;
+}
+tab-counter:hover::after {
+  margin-right: -3px;
+}
+
+/* change tab counter color */
+tab-counter {
+  color: #888;
+}
+
+/* hide favicon when hover */
+#tabbar tab-item:not(.pinned):hover tab-favicon {
+  display: none;
+}
+
+:root.left tab-item tab-twisty {
+  order: 10000;
+}
+:root.left tab-item tab-closebox {
+  order: -1;
+}
+
+/* Only show tab close button on hover */
+#tabbar tab-item tab-item-substance:not(:hover) tab-closebox {
   display: none;
 }
