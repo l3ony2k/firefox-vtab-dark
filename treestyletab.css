@@ -1,7 +1,7 @@
 :root {
 	--face-highlight-lighter: rgb(122,46,46);
 	--face-highlight-more-lighter: #400000;
-	--face-highlight-more-more-lighter: rgb(72,44,44);
+	--face-highlight-more-more-lighter: rgba(124,71,71,0.5);
 	--face-gradient-start-active: rgba(43,43,43,0.4);
 	--face-gradient-start-inactive: rgba(44,44,44,0.2);
 	--face-gradient-end: rgba(44,44,44,0);
@@ -9,20 +9,25 @@
 
 tab-item {
 	--tab-surface: hsla(0, 0%, 100%, .16);
+    backdrop-filter: blur(999px);
 }
 
 tab-item > tab-item-substance {
 	border: .5px solid hsla(0, 0%, 0%, 0.22);
 	outline: 1px solid hsla(0, 0%, 0%, 0.09);
-	--tab-size: 36px !important;
+	--tab-size: 38px !important;
 	height: var(--tab-size);
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
 	gap: 6px;
-	padding: 0 0 0 8px !important;
+	padding: 0px 0px 0px 8px !important;
 	margin: 0;
+}
+
+tab-item .label-content {
+  padding: 4px 0px 0px 0px;
 }
 
 tab-item.active .label-content {
@@ -120,7 +125,8 @@ tab-item > tab-item-substance::before {
 }
 
 :root.sidebar #background {
-  background: url("chrome://global/skin/media/imagedoc-lightnoise.png");
+  /*background: url("chrome://global/skin/media/imagedoc-lightnoise.png");*/
+  background: #000;
 }
 
 .newtab-button {
