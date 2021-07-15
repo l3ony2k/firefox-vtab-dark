@@ -1,20 +1,20 @@
 @media (-moz-proton) {
-  @-moz-document url("about:home"), url("about:newtab") {
-    /** Activity Stream - Search Focus Border: like URL ***********************/
-    /* At DarkMode, Color */
-    body[style*="--newtab-background-color:rgba(28, 27, 34, 1);"],
-    body[style*="--newtab-background-color:rgba(42, 42, 46, 1);"] {
-      /* inner */
-      --newtab-focus-border: rgba(0, 221, 255, 0.5) !important; /* Original: #B5D3FF, Better color-mix(in srgb, #B5D3FF 70%, transparent) */
-      --newtab-focus-border-selected: rgba(0, 221, 255, 0.5) !important; /* Original: #B5D3FF */
-    }
+@-moz-document url("about:home"), url("about:newtab") {
+	/** Activity Stream - Search Focus Border: like URL ***********************/
+	/* At DarkMode, Color */
+	body[style*="--newtab-background-color:rgba(28, 27, 34, 1);"],
+	body[style*="--newtab-background-color:rgba(42, 42, 46, 1);"] {
+	/* inner */
+	--newtab-focus-border: rgba(0, 221, 255, 0.5) !important; /* Original: #B5D3FF, Better color-mix(in srgb, #B5D3FF 70%, transparent) */
+	--newtab-focus-border-selected: rgba(0, 221, 255, 0.5) !important; /* Original: #B5D3FF */
+	}
 
-    /** Activity Stream - Web Site Icon: full size ****************************/
-    .top-site-outer .tile .icon-wrapper {
-      width:  100% !important; /* Original: 48px */
-      height: 100% !important; /* Original: 48px */
-    }
-  }
+	/** Activity Stream - Web Site Icon: full size ****************************/
+	.top-site-outer .tile .icon-wrapper {
+	width:  100% !important; /* Original: 48px */
+	height: 100% !important; /* Original: 48px */
+	}
+}
 }
 
 
@@ -22,11 +22,11 @@
 @-moz-document regexp("moz-extension://.+/sidebar/sidebar.html.*") {
 	:root,
 	#background {
-	  background-color: #222;
-	  background: url("chrome://global/skin/media/imagedoc-lightnoise.png");
-	  /* https://github.com/piroor/treestyletab/blob/0eede581d763f92344fe64b1c042839f3b8ca955/webextensions/resources/ui-color.css#L198 */
+	background-color: #222;
+	background: url("chrome://global/skin/media/imagedoc-lightnoise.png");
+	/* https://github.com/piroor/treestyletab/blob/0eede581d763f92344fe64b1c042839f3b8ca955/webextensions/resources/ui-color.css#L198 */
 	}
-  }
+}
 
 
 
@@ -49,12 +49,12 @@
 }
 
 /* :root::before {
-    content: '';
-    position: fixed;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 8px;
+	content: '';
+	position: fixed;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 8px;
 	z-index: 1;
 	background-color: hsla(0, 0%, 0%, 0.1);
 	background-image: var(--acrylic-background-image) repeat repeat !important;
@@ -103,7 +103,8 @@ scrollbar {
 		padding-bottom: 75vh !important;
 	}
 	body.sans-serif p, body.serif p {
-		text-indent: 20px !important;
+		text-indent: 0px !important;
+		border-radius: 0 !important;
 	}
 	.toolbar {
 		padding-block: 16px !important;
