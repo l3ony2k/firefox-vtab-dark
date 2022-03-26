@@ -1,6 +1,6 @@
 :root {
 	--face-highlight-lighter: rgb(122,46,46);
-	--face-highlight-more-lighter: #400000;
+	--face-highlight-more-lighter: /*hsla(0,0%,100%,0.18)*/#400000;
 	--face-highlight-more-more-lighter: rgba(124,71,71,0.5);
 	--face-gradient-start-active: rgba(43,43,43,0.4);
 	--face-gradient-start-inactive: rgba(44,44,44,0.2);
@@ -8,14 +8,13 @@
 }
 
 tab-item {
-	--tab-surface: hsla(0, 0%, 100%, .16);
+	--tab-surface: hsla(0, 0%, 100%, .15);
     backdrop-filter: blur(999px);
 }
 
 tab-item > tab-item-substance {
 	border: .5px solid hsla(0, 0%, 0%, 0.22);
-	outline: 1px solid hsla(0, 0%, 0%, 0.09);
-	--tab-size: 38px !important;
+	--tab-size: 37px !important;
 	height: var(--tab-size);
 	display: flex;
 	flex-direction: row;
@@ -32,11 +31,17 @@ tab-item .label-content {
 
 tab-item.active .label-content {
   font-weight: bold;
-  color: #fff;
+  color: #FFFFFF;
+  /*font-style: italic;*/
+  /*font-family: fira code;*/
 }
 
 tab-item.unread {
 	opacity: .5;
+}
+
+tab-item.unread .label-content {
+  font-style: italic;
 }
 
 tab-item.pinned > tab-item-substance {
@@ -133,10 +138,6 @@ tab-item > tab-item-substance::before {
   display: none;
 }
 
-tab-item.unread .label-content {
-  font-style: italic;
-}
-
 /* twisty only show on hover */
 #tabbar tab-item:not(:hover) tab-twisty {
   display: none;
@@ -171,3 +172,20 @@ tab-counter {
 #tabbar tab-item tab-item-substance:not(:hover) tab-closebox {
   display: none;
 }
+
+/*tab-item[data-current-uri^="https://github.com"],
+tab-item[data-current-uri^="https://gist.github.com"],
+tab-item[data-current-uri^="https://www.youtube.com"] {
+	--overlay-content: '';
+	--overlay-color: hsla(195,54%,50%,0.15);
+}
+tab-item[data-current-uri^="about:"] {
+	--overlay-content: '';
+	--overlay-color: hsla(0,0%,0%,0.52);
+}
+tab-item[data-current-uri^="https://zh.wikipedia.org"],
+tab-item[data-current-uri^="https://logseq.com"],
+tab-item[data-current-uri^="https://workflowy.com"] {
+	--overlay-content: '';
+	--overlay-color: hsla(225,61%,50%,0.15);
+}*/
