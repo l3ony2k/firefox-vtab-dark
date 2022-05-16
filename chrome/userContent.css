@@ -1,171 +1,184 @@
 @media (-moz-proton) {
-@-moz-document url("about:home"), url("about:newtab") {
-	/** Activity Stream - Search Focus Border: like URL ***********************/
-	/* At DarkMode, Color */
-	body[style*="--newtab-background-color:rgba(28, 27, 34, 1);"],
-	body[style*="--newtab-background-color:rgba(42, 42, 46, 1);"] {
-	/* inner */
-	--newtab-focus-border: rgba(0, 221, 255, 0.5) !important; /* Original: #B5D3FF, Better color-mix(in srgb, #B5D3FF 70%, transparent) */
-	--newtab-focus-border-selected: rgba(0, 221, 255, 0.5) !important; /* Original: #B5D3FF */
-	}
+  @-moz-document url("about:home"), url("about:newtab") {
+    /** Activity Stream - Search Focus Border: like URL ***********************/
+    /* At DarkMode, Color */
+    body[style*="--newtab-background-color:rgba(28, 27, 34, 1);"],
+    body[style*="--newtab-background-color:rgba(42, 42, 46, 1);"] {
+      /* inner */
+      --newtab-focus-border: rgba(
+        0,
+        221,
+        255,
+        0.5
+      ) !important; /* Original: #B5D3FF, Better color-mix(in srgb, #B5D3FF 70%, transparent) */
+      --newtab-focus-border-selected: rgba(
+        0,
+        221,
+        255,
+        0.5
+      ) !important; /* Original: #B5D3FF */
+    }
 
-	/** Activity Stream - Web Site Icon: full size ****************************/
-	.top-site-outer .tile .icon-wrapper {
-	width:  100% !important; /* Original: 48px */
-	height: 100% !important; /* Original: 48px */
-	}
+    /** Activity Stream - Web Site Icon: full size ****************************/
+    .top-site-outer .tile .icon-wrapper {
+      width: 100% !important; /* Original: 48px */
+      height: 100% !important; /* Original: 48px */
+    }
+  }
 }
-}
-
 
 /* change tst white splash loading */
 @-moz-document regexp("moz-extension://.+/sidebar/sidebar.html.*") {
-	:root,
-	#background {
-	background-color: #222;
-	background: url("chrome://global/skin/media/imagedoc-lightnoise.png");
-	/* https://github.com/piroor/treestyletab/blob/0eede581d763f92344fe64b1c042839f3b8ca955/webextensions/resources/ui-color.css#L198 */
-	}
-}
-
-
-
-:root {
-	--acrylic-backdrop-filter: blur(10px);
-	--acrylic-background-blend-mode: exclusion;
-	--acrylic-background-image: url("chrome://global/skin/media/imagedoc-lightnoise.png");
+  :root,
+  #background {
+    background-color: #222;
+    background: url("chrome://global/skin/media/imagedoc-lightnoise.png");
+    /* https://github.com/piroor/treestyletab/blob/0eede581d763f92344fe64b1c042839f3b8ca955/webextensions/resources/ui-color.css#L198 */
+  }
 }
 
 :root {
-	font-family: '微软雅黑', 'Google Sans', 'Open Sans', sans-serif, 'Noto Sans', 'Twemoji Mozilla', 'Twitter Emoji Color', 'Segoe UI Emoji';
+  --acrylic-backdrop-filter: blur(10px);
+  --acrylic-background-blend-mode: exclusion;
+  --acrylic-background-image: url("chrome://global/skin/media/imagedoc-lightnoise.png");
 }
 
 :root {
-	scrollbar-color: hsla(0, 0%, 33%, 0.5) hsla(0, 0%, 0%, 0.1) !important;
+  font-family: "微软雅黑", "Google Sans", "Open Sans", sans-serif, "Noto Sans",
+    "Twemoji Mozilla", "Twitter Emoji Color", "Segoe UI Emoji";
 }
 
-:root, * {
-	scrollbar-width: thin !important;
+:root {
+  scrollbar-color: hsla(0, 0%, 33%, 0.5) hsla(0, 0%, 0%, 0.1) !important;
+}
+
+:root,
+* {
+  scrollbar-width: thin !important;
 }
 
 /* :root::before {
-	content: '';
-	position: fixed;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	width: 8px;
-	z-index: 1;
-	background-color: hsla(0, 0%, 0%, 0.1);
-	background-image: var(--acrylic-background-image) repeat repeat !important;
-	backdrop-filter: var(--acrylic-backdrop-filter) !important;
-	background-blend-mode: var(--acrylic-background-blend-mode) !important;
-	scrollbar-color: hsla(0, 0%, 33%, 0.5) transparent !important;
-	scrollbar-width: thin !important;
-} */
+		content: '';
+		position: fixed;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		width: 8px;
+		z-index: 1;
+		background-color: hsla(0, 0%, 0%, 0.1);
+		background-image: var(--acrylic-background-image) repeat repeat !important;
+		backdrop-filter: var(--acrylic-backdrop-filter) !important;
+		background-blend-mode: var(--acrylic-background-blend-mode) !important;
+		scrollbar-color: hsla(0, 0%, 33%, 0.5) transparent !important;
+		scrollbar-width: thin !important;
+	} */
 
 scrollbar {
-	scrollbar-color: hsla(0, 0%, 33%, 0.5) transparent !important;
-	scrollbar-width: thin !important;
-	background-color: hsla(0, 0%, 0%, 0);
-	/*background-image: var(--acrylic-background-image) repeat repeat !important;*/
-	backdrop-filter: var(--acrylic-backdrop-filter) !important;
-	background-blend-mode: var(--acrylic-background-blend-mode) !important;
+  scrollbar-color: hsla(0, 0%, 33%, 0.5) transparent !important;
+  scrollbar-width: thin !important;
+  background-color: hsla(0, 0%, 0%, 0);
+  /*background-image: var(--acrylic-background-image) repeat repeat !important;*/
+  backdrop-filter: var(--acrylic-backdrop-filter) !important;
+  background-blend-mode: var(--acrylic-background-blend-mode) !important;
 }
 
 /* for about:'pages')*/
 @-moz-document url-prefix('about:') {
-	window,
-	page,
-	html,
-	.main-content,
-	scrollbar {
-		scrollbar-color: hsla(0, 0%, 33%, 0.5) hsla(0, 0%, 0%, 0.1) !important;
-		scrollbar-width: thin !important;
-	}
+  window,
+  page,
+  html,
+  .main-content,
+  scrollbar {
+    scrollbar-color: hsla(0, 0%, 33%, 0.5) hsla(0, 0%, 0%, 0.1) !important;
+    scrollbar-width: thin !important;
+  }
 }
-
 
 /*reader*/
 @-moz-document url-prefix('about:reader') {
-	* {
-		box-sizing: border-box;
-		word-spacing: .1em;
-	}
-	body.sans-serif {
-		font-family: '微软雅黑', 'Open Sans', 'Noto Sans', Arial, sans-serif !important;
-		line-height: 1.5em;
-	}
-	body.serif {
-		font-family: '思源宋体 CN',serif, 'Book Antiqua' !important;
-	}
-	body.sans-serif, body.serif {
-		padding-bottom: 75vh !important;
-	}
-	body.sans-serif p, body.serif p {
-		text-indent: 0px !important;
-		border-radius: 0 !important;
-	}
-	.toolbar {
-		padding-block: 16px !important;
-		border: 1px solid var(--toolbar-border) !important;
-		border-radius: 6px !important;
-		box-shadow: 0 2px 8px var(--toolbar-box-shadow) !important;
-		width: 32px !important;
-		--inline-padding: min(16px, calc(25% - 0.25 * 34px)) !important;
-		padding-inline: 0 !important;
-		margin-inline-start: max(calc(50% - 17px - var(--inline-padding)), calc(100% - 96px - 34px - 2 * var(--inline-padding))) !important;
-		font-family: Helvetica, Arial, sans-serif !important;
-		/* list-style: none; */
-		/* user-select: none; */
-	}
-	body.dark {
-		--main-background: #1b1b1b !important;
-		--main-foreground: #fafafa !important;
-		--toolbar-border: #2e2e2e !important;
-		--toolbar-box-shadow: #131313 !important;
-		--toolbar-button-hover: var(--grey-90-a30) !important;
-		--toolbar-button-active: var(--grey-90-a80) !important;
-		--popup-button-active: hsla(0,0%,70%,.6) !important;
-		--popup-bgcolor: #4c4a50 !important;
-		--popup-button: #5c5c61 !important;
-		--popup-line: #5c5c61 !important;
-		--selected-background: #9A3E3E !important;
-		--link-foreground: #d27a7a !important;
-		--visited-link-foreground: #e675fd !important;
-		--link-selected-foreground: #fff !important;
-		--opaque-popup-border: #434146 !important;
-		--font-value-border: #656468 !important;
-		--font-color: #fff !important;
-		--icon-fill: #fff !important;
-		--icon-disabled-fill: #ffffff66 !important;
-		--tooltip-background: black !important;
-		--tooltip-foreground: white !important;
-	}
-	.container {
-		text-align: justify  !important;
-	}
+  * {
+    box-sizing: border-box;
+    word-spacing: 0.1em;
+  }
+  body.sans-serif {
+    font-family: "微软雅黑", "Open Sans", "Noto Sans", Arial, sans-serif !important;
+    line-height: 1.5em;
+  }
+  body.serif {
+    font-family: "思源宋体 CN", serif, "Book Antiqua" !important;
+  }
+  body.sans-serif,
+  body.serif {
+    padding-bottom: 75vh !important;
+  }
+  body.sans-serif p,
+  body.serif p {
+    text-indent: 0px !important;
+    border-radius: 0 !important;
+  }
+  .toolbar {
+    padding-block: 16px !important;
+    border: 1px solid var(--toolbar-border) !important;
+    border-radius: 6px !important;
+    box-shadow: 0 2px 8px var(--toolbar-box-shadow) !important;
+    width: 32px !important;
+    --inline-padding: min(16px, calc(25% - 0.25 * 34px)) !important;
+    padding-inline: 0 !important;
+    margin-inline-start: max(
+      calc(50% - 17px - var(--inline-padding)),
+      calc(100% - 96px - 34px - 2 * var(--inline-padding))
+    ) !important;
+    font-family: Helvetica, Arial, sans-serif !important;
+    /* list-style: none; */
+    /* user-select: none; */
+  }
+  body.dark {
+    --main-background: #1b1b1b !important;
+    --main-foreground: #fafafa !important;
+    --toolbar-border: #2e2e2e !important;
+    --toolbar-box-shadow: #131313 !important;
+    --toolbar-button-hover: var(--grey-90-a30) !important;
+    --toolbar-button-active: var(--grey-90-a80) !important;
+    --popup-button-active: hsla(0, 0%, 70%, 0.6) !important;
+    --popup-bgcolor: #4c4a50 !important;
+    --popup-button: #5c5c61 !important;
+    --popup-line: #5c5c61 !important;
+    --selected-background: #9a3e3e !important;
+    --link-foreground: #d27a7a !important;
+    --visited-link-foreground: #e675fd !important;
+    --link-selected-foreground: #fff !important;
+    --opaque-popup-border: #434146 !important;
+    --font-value-border: #656468 !important;
+    --font-color: #fff !important;
+    --icon-fill: #fff !important;
+    --icon-disabled-fill: #ffffff66 !important;
+    --tooltip-background: black !important;
+    --tooltip-foreground: white !important;
+  }
+  .container {
+    text-align: justify !important;
+  }
 }
 .top-sites {
-	--newtab-topsites-background-color: var(--newtab-background-color);
+  --newtab-topsites-background-color: var(--newtab-background-color);
 }
 .top-sites .top-site-icon.rich-icon,
 .top-sites .top-sites-list .top-site-outer .tile {
-	box-shadow: none !important;
+  box-shadow: none !important;
 }
 .top-site-outer .screenshot {
-	box-shadow: 0 2px 3px hsla(0, 0%, 0%, 0.1) !important;
+  box-shadow: 0 2px 3px hsla(0, 0%, 0%, 0.1) !important;
 }
 .top-site-outer .default-icon {
-	border-radius: 50% !important;
-	background-size: 64% !important;
-	background-color: white !important;
-	box-shadow: 0 3px 8px rgba(0,0,0,0.2) !important;
+  border-radius: 50% !important;
+  background-size: 64% !important;
+  background-color: white !important;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2) !important;
 }
 body.activity-stream .top-sites .section-top-bar {
-	height: unset !important;
-	margin-bottom: 32px !important;
+  height: unset !important;
+  margin-bottom: 32px !important;
 }
 body.activity-stream .top-sites .top-sites-list .top-site-outer .title {
-	margin-top: 10px !important;
+  margin-top: 10px !important;
 }
