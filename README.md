@@ -2,7 +2,7 @@
 
 Self-using Firefox theme and TreeStyleTab theme.
 
-Based on [Lepton](https://github.com/black7375/Firefox-UI-Fix) and [My Firefox Theme](https://github.com/not-holar/my_firefox_theme). 
+Based on [Lepton](https://github.com/black7375/Firefox-UI-Fix), [FirefoxW10ContextMenus](https://github.com/M1ch431/FirefoxW10ContextMenus) and [My Firefox Theme](https://github.com/not-holar/my_firefox_theme). 
 
 Best w/ [Matte Black (Red)](https://addons.mozilla.org/en-US/firefox/addon/matte-black-red/) theme.
 
