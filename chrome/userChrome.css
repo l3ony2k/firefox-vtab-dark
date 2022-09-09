@@ -101,7 +101,7 @@ menupopup > menu {
 /* personal preferences end */
 
 /*
-			TREE STYLE TABS - START
+      TREE STYLE TABS - START
 */
 
 /* Reduce minimum width of the sidebar */
@@ -115,17 +115,21 @@ menupopup > menu {
   visibility: collapse;
 }
 
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] > #sidebar-header{
+  display: none;
+}
+
 /*
-			TREE STYLE TABS - END
+      TREE STYLE TABS - END
 */
 
 /*
-			REMOVE TAB BAR - START
+      REMOVE TAB BAR - START
 */
 
 :root[sizemode="maximized"][tabsintitlebar="true"] #navigator-toolbox {
-  margin-top: 7.5px;
-  /*margin-top: 0 !important;*/
+  /*margin-top: 7.5px;*/
+  margin-top: 0 !important;
 }
 
 #toolbar-menubar,
@@ -166,7 +170,7 @@ menupopup > menu {
 }
 
 /*
-			REMOVE TAB BAR - END
+      REMOVE TAB BAR - END
 */
 
 /*############################################
@@ -247,7 +251,7 @@ scrollbar {
   box-shadow: none !important;
 }
 /*#back-button > .toolbarbutton-icon {
-	list-style-image: url("img/back.svg") !important;
+  list-style-image: url("img/back.svg") !important;
 }*/
 :root:not([uidensity="compact"]) #nav-bar #back-button > .toolbarbutton-icon {
   --backbutton-background: transparent;
@@ -298,10 +302,10 @@ scrollbar {
 
 #urlbar > #urlbar-background,
 #searchbar::before {
-  /*	background: var(--urlbar-background) !important;
-	background-image: var(--acrylic-background-image) repeat repeat !important;
-	backdrop-filter: var(--acrylic-backdrop-filter) !important;
-	background-blend-mode: var(--acrylic-background-blend-mode) !important;*/
+  /*  background: var(--urlbar-background) !important;
+  background-image: var(--acrylic-background-image) repeat repeat !important;
+  backdrop-filter: var(--acrylic-backdrop-filter) !important;
+  background-blend-mode: var(--acrylic-background-blend-mode) !important;*/
   background: #1a1a1a !important;
   border: none !important;
   box-shadow: none !important;
