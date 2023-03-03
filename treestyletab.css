@@ -22,7 +22,6 @@ tab-item > tab-item-substance {
 	justify-content: center;
 	gap: 6px;
 	padding: 0px 0px 0px 8px !important;
-	margin: 0;
 }
 
 tab-item .label-content {
@@ -32,8 +31,6 @@ tab-item .label-content {
 tab-item.active .label-content {
   font-weight: bold;
   color: #FFFFFF;
-  /*font-style: italic;*/
-  /*font-family: fira code;*/
 }
 
 tab-item.unread {
